@@ -1,0 +1,2 @@
+class Justice < ApplicationRecord
+end
