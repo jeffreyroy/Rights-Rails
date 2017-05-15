@@ -1,15 +1,282 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	/*background-color: white;*/
+	padding: 20px;
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+}
+
+#rightswatch {
+  color: teal;
+  font-size: 1.5em;
+}
+
+.court-background {
+	background: black url("/images/court-background.jpg") no-repeat center center fixed;
+	background-size: 100%, 100%;
+	color: white;
+}
+
+.alert {
+	color: green;
+	padding: 10px;
+}
+
+.center-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.flex-centered {
+	margin: auto;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/*	border-width: 2px;
+	border-style: solid;
+	border-color: black;*/
+}
+
+.white-background {
+	margin: auto;
+	width: 1200px;
+	background-color: white;
+	color: black;
+	padding: 1em;
+}
+
+.justices-container {
+	/*width: 800px;*/
+	height: 200px;
+	padding: 5px;
+
+}
+
+.justice-image {
+	box-shadow: 2px 2px 5px black;
+	height: auto;
+	width: 100px;
+	margin: 2px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	/*display: inline-block;*/
+	/*vertical-align: middle;*/
+}
+
+.justice-name {
+	text-align: center;
+	display: none;
+}
+
+.login-form {
+	display: inline-block;
+	float: right;
+}
+
+input {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.num-input {
+	width: 3em;
+}
+
+.errors {
+	color: red;
+}
+
+.unmarked-list {
+	list-style-type: none;
+}
+
+.inline {
+	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
+
+}
+
+.flex {
+	display: flex;
+}
+
+.inline-box {
+	display: inline-block;
+	vertical-align: top;
+	border: 1px, solid, black;
+	padding: 10px;
+	width: 40%;
+	margin: 10px;
+}
+
+.opinion-container {
+	font-family: serif;
+	padding: 0em 5em;
+}
+
+.big-button {
+  margin: 1em auto;
+  padding: 2em;
+  width: 20em;
+  max-width: 60%;
+  border-radius: .5em;
+  border: none;
+  outline: none;
+}
+
+.tall-button {
+  margin: 1em auto;
+  padding: 1em;
+  width: 3em;
+  max-width: 60%;
+  border-radius: .5em;
+  border: none;
+  outline: none;
+  vertical-align: top;
+}
+
+.small-button {
+	margin: 2px auto;
+	padding: 3px;
+	border-radius: 2px;
+	display: inline;
+}
+
+.box {
+	border: 1px solid black;
+	border-radius: 2px;
+  padding: 10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.link-button {
+     background: none;
+     border: none; 
+     padding: 0t;
+     font: inherit;
+}
+
+input {
+	padding: 2px;
+	margin: 2px;
+}
+
+select {
+	margin: 3px;
+}
+
+optgroup {
+	font-size: 120%;
+}
+
+.light-blue {
+	background-color: lightblue;
+}
+
+.yellow {
+	background-color: tan;
+}
+
+.button-list {
+	text-align: center;
+	list-style-type: none;
+}
+
+.column-heading {
+  margin-left: 2em;
+}
+
+/*animations*/
+
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #000000;
+  background: -moz-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #000000;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: #ffffff;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,18 @@
+<div class="white-background" >
+  <img id="logo" src="/images/logo.png">
+  <div class="inline-block">
+    <a id="rightswatch" href="/"><h1>RightsWatch</h1></a>
+  </div>
+  <div class="login-form">
+  <% if session[:id] %>
+    <%= current_user.user_name %> |
+    <form class="login-form" id="logout-form" action="/sessions" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="link-button" type="submit">Logout</button>
+    </form>
+  <% else %>
+    <a href="/users/new">Register</a> | <a href="/sessions/new">Login</a>
+  <% end %>
+  <div>
+
+</div>

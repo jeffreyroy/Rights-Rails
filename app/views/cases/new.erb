@@ -1,0 +1,45 @@
+<h1>New case</h1>
+
+<% if @case && @case.errors.any? %>
+  <section class="errors">
+    <ul>
+      <% @case.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+<form action='/cases' method='post' class="white-background">
+  <label>Issue:</label>
+  <select name="issue">
+    <optgroup>
+
+    <% @issues.each do |issue| %>
+      <option value="<%=issue.name%>"><%=issue.name%></option>
+    <% end %>
+    </optgroup>
+  </select>
+  <div>
+    <label>Case Name:</label>
+    <input type="text" name="plaintiff" placeholder="Plaintiff">
+    <label>v.</label>
+    <input type="text" name="defendant" placeholder="Defendant">
+  </div>
+  <div>
+    <label>Citation:</label>
+    <input type="number" name="volume" placeholder="Vol." class="num-input">
+    <select name="reporter">
+      <optgroup>
+        <option value=" U.S. ">U.S.</option>
+        <option value=" S. Ct. ">S.Ct.</option>
+      </optgroup>
+    </select>
+    <input type="number" name="page" placeholder="Pg." class="num-input">
+  </div>
+  <div>
+    <label>Date Decided:</label>
+    <input type="date" name="date">
+  </div>
+  <button type="submit">Submit</button>
+</form>

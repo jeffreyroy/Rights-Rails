@@ -1,0 +1,22 @@
+<div class="flex-centered">
+  <h1>Issues</h1>
+</div>
+<div class="flex-centered">
+  <ul class="button-list" id="issue-button-list">
+    <% Issue.all.each do |cur_issue| %>
+      <%= render partial: "/issues/button", locals: { issue: cur_issue } %>
+    <% end %>
+    <% if current_user %>
+      <li class="inline-block" id="new-issue-link">
+        <form class="flex" action="/issues/new">
+          <button class="big-button yellow" type="submit">+ Add New Issue</button>
+        </form>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="issue-form-holder">
+
+</div>
+
