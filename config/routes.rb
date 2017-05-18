@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   resources :issues
   resources :users
+  post 'users/new' => 'users#create'
+
   resources :cases
+  resources :sessions
+  post 'sessions/new' => 'sessions#create'
+
+  resources :opinions
 
 end
