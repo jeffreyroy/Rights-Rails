@@ -5,7 +5,7 @@
 <div class="justices-container flex-centered">
 	<% Justice.all.each do |justice| %>
 		<div>
-			<img class="justice-image" src="/images/<%=justice.image_file%>">
+      <%= image_tag justice.image_file, class: "justice-image" %>
 			<div class="justice-name"><%=justice.first_name + ' ' + justice.last_name%></div>
 		</div>
 	<% end %>

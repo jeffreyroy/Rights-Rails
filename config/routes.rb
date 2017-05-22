@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   resources :opinions
 
+  get 'justices' => 'justices#index'
+
 end
