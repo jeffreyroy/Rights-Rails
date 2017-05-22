@@ -1,5 +1,6 @@
 # Class to represent a CourtListener opinion
 class CLOpinion
+  include ActionView::Helpers::TextHelper
   attr_reader :name, :cite, :date_decided, :full_text
   attr_accessor :id
 
@@ -35,11 +36,12 @@ class CLOpinion
     cite = @name
     cite += ", #{@cite}" if @cite
     cite += " #{@date_decided.year}" if @date_decided
-
   end
 
+  # Use Rails simple_format to format text for display 
   def formatted_text
-    @full_text.split("/n").join("</p><p>")
+    # simple_format(@full_text)
+    @full_text
   end
 
 end

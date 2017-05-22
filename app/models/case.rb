@@ -13,10 +13,6 @@ class Case < ApplicationRecord
     "#{name}, #{cite1} (#{date_decided.year})"
   end
 
-  def full_text
-    courtlistener = CourtListener.new
-  end
-
   # Get case info from CourtListener
   def cl_hash
     if @cl_hash
