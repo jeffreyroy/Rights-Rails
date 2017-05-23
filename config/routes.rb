@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :cases
   resources :sessions
   post 'sessions/new' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
 
   resources :opinions
 
