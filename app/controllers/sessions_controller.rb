@@ -28,5 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:id] = nil
+    redirect_to issues_url
   end
 end
