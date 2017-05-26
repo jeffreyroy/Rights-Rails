@@ -1,4 +1,5 @@
 class Case < ApplicationRecord
+
   belongs_to :issue
   has_many :opinions
   has_many :justices, through: :opinions
