@@ -12,7 +12,7 @@ class CasesController < ApplicationController
     if request.xhr?
       render partial: 'form'
     else
-      redirect_to 'new'
+      render 'new'
     end
   end
 
@@ -32,7 +32,8 @@ class CasesController < ApplicationController
       if request.xhr?
         render partial: "button", layout: false, locals: { cur_case: @case }
       else
-        redirect_to "/issues/#{@issue.id}"
+        # redirect_to "/issues/#{@issue.id}"
+        redirect_to issue_url(@issue)
       end
     else
       if !request.xhr?
@@ -60,7 +61,7 @@ class CasesController < ApplicationController
     if request.xhr?
       render partial: "citing_case", layout: false, locals: { cur_case: @case, issue: @issue }
     else
-      redirect_to :'issues/show'
+      render "issues/show"
     end
   end
 

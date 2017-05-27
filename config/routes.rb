@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  root 'issues#index'
+
   resources :issues do
     resources :cases
   end
   get 'issues/:issue_id/citations/:id' => 'cases#show_citation'
   post 'issues/:issue_id/cases/:case_id' => 'cases#citations'
-  get 'issues/:issue_id/cases/new' => 'cases#new'
+  # get 'issues/:issue_id/cases/new' => 'cases#new'
   post 'issues/:issue_id/cases' => 'cases#create'
 
   resources :users

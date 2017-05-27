@@ -24,7 +24,7 @@ class IssuesController < ApplicationController
         redirect_to issues_url
       end
     else
-      redirect_to "new"
+      render "new"
     end
   end
 
