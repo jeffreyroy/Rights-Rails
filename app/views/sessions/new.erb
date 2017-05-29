@@ -2,14 +2,8 @@
 
 <error><%= @errors[0] if @errors %></error>
 
-<form action="/sessions" method="post">
-  <input type="text" name="email" placeholder="email">
-  <input type="password" name="password" placeholder="password">
-  <input type="submit" value="Submit">
-</form>
-
 <%= form_for :session do |f| %>
-  <%= f.text_field :email %>
-  <%= f.text_field :password %>
+  <%= f.text_field :email, placeholder: "email" %>
+  <%= f.password_field :password, placeholder: "password" %>
   <%= f.submit "Login" %>
 <% end %>
