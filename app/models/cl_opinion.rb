@@ -40,8 +40,8 @@ class CLOpinion
 
   # Use Rails simple_format to format text for display 
   def formatted_text
-    # simple_format(@full_text)
-    @full_text
+    simple_format(@full_text)
+    # @full_text
   end
 
 end
