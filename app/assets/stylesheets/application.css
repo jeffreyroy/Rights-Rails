@@ -141,6 +141,8 @@ input {
 .tall-button {
   margin: 1em auto;
   padding: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   width: 3em;
   max-width: 60%;
   border-radius: .5em;
@@ -179,10 +181,11 @@ a:active {
 }
 
 .link-button {
-     background: none;
-     border: none; 
-     padding: 0t;
-     font: inherit;
+  background: none;
+  border: none; 
+  padding: 0t;
+  font: inherit;
+
 }
 
 input {
