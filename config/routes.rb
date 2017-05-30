@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   get 'issues/:issue_id/citations/:id' => 'cases#show_citation'
   post 'issues/:issue_id/cases/:case_id' => 'cases#citations'
+  get 'issues/follow/:id' => 'issues#follow'
+  get 'issues/unfollow/:id' => 'issues#unfollow'
 
   resources :users
   post 'users/new' => 'users#create'

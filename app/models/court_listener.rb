@@ -11,7 +11,6 @@ class CourtListener
     p request_url
     p self.class::TOKEN
     HTTParty.get(request_url, headers: {"Authorization" => "Token #{self.class::TOKEN}"})
-    # HTTParty.get(request_url)
   end
 
   # Perform query on endpoint

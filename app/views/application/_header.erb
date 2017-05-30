@@ -5,14 +5,14 @@
     <a id="rightswatch" href="/"><h1>RightsWatch</h1></a>
   </div>
   <div class="login-form">
-  <% if session[:id] %>
-    <%= current_user.user_name %> |
-    <div class="inline-block">
-    <%= button_to "logout", { :controller => "sessions", :action => "destroy" }, :method => "delete", :class => "link-button" %>
-    </div>
-  <% else %>
-    <a href="/users/new">Register</a> | <a href="/sessions/new">Login</a>
-  <% end %>
+    <% if session[:id] %>
+      <%= current_user.user_name %> |
+      <div class="inline-block">
+      <%= button_to "logout", { :controller => "sessions", :action => "destroy" }, :method => "delete", :class => "link-button" %>
+      </div>
+    <% else %>
+      <a href="/users/new">Register</a> | <a href="/sessions/new">Login</a>
+    <% end %>
   <div>
 
 </div>

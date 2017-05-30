@@ -1,5 +1,14 @@
 <div class="flex-centered">
   <h1><%= @issue.name %></h1>
+  <h3>
+    <% if session[:id] %>
+      <% if @followed %>
+        ( <%= link_to "unfollow", controller: "issues", action: "unfollow", id: @issue.id %> )
+      <% else %>
+        ( <%= link_to "follow", controller: "issues", action: "follow", id: @issue.id %> )
+      <% end %>
+    <% end %>
+  </h3>
 </div>
 <div class="inline-box flex-centered">
   <h2 class="column-heading">Supreme Court cases</h2>

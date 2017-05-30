@@ -1,5 +1,7 @@
 class IssuesController < ApplicationController
 
+  include ApplicationHelper
+
   # Skip CSRF protection
   skip_before_filter  :verify_authenticity_token
 
@@ -30,6 +32,21 @@ class IssuesController < ApplicationController
 
   def show
     @issue = Issue.find(params[:id])
+    @followed = @issue.users.include?(current_user)
+  end
+
+  def follow
+    @issue = Issue.find(params[:id])
+    @issue.users << current_user
+    @issue.save # Need to add check for save failure
+    redirect_to @issue
+  end
+
+  def unfollow
+    @issue = Issue.find(params[:id])
+    @issue.users.delete(current_user)
+    @issue.save
+    redirect_to @issue
   end
 
   def edit
