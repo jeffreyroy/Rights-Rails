@@ -7,8 +7,15 @@ class Case < ApplicationRecord
   validates :name, presence: true
   validates :date_decided, presence: true
   validates :cite1, presence: true
+  validate :exists_in_CL
 
-  
+  # Verify that case exists in Court Listener database
+  def exists_in_CL
+    if !cl_hash
+      errors.add(:cite1, "doesn't exist in CourtListener database.")
+    end
+  end
+
   # Return full Bluebook citation
   def full_citation
     "#{name}, #{cite1} (#{date_decided.year})"
