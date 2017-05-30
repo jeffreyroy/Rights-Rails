@@ -18,7 +18,7 @@ header {
 }
 
 .court-background {
-	background: black url("court-background.jpg") no-repeat center center fixed;
+	/*background: black url("court-background.jpg") no-repeat center center fixed;*/
 	background-size: 100%, 100%;
 	color: white;
 }
@@ -49,7 +49,7 @@ header {
 
 .white-background {
 	margin: auto;
-	width: 1200px;
+	width: auto;
 	background-color: white;
 	color: black;
 	padding: 1em;
@@ -136,6 +136,13 @@ input {
   border-radius: .5em;
   border: none;
   outline: none;
+}
+
+/*format for mobile*/
+@media (orientation: portrait) {
+    .big-button {
+      font-size: 2em;
+    }
 }
 
 .tall-button {
