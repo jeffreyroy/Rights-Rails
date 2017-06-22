@@ -44,6 +44,11 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # ENV
   gem 'dotenv-rails'
+  # Testing
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara'
 end
 
 group :development do

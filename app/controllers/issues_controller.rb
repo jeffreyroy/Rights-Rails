@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
 
-  include ApplicationHelper
+  include SessionsHelper
 
   # Skip CSRF protection
   skip_before_filter  :verify_authenticity_token
