@@ -18,7 +18,9 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:id] = @user.id
-        redirect_to sessions_url(action: new)
+        # redirect_to sessions_url(action: new)
+        redirect_to '/'
+
       else
         @errors = @user.errors.full_messages
         render 'new'
