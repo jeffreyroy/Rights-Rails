@@ -228,18 +228,34 @@ optgroup {
 /*animations*/
 
 .loader {
+    border: 16px solid lightgrey; /* Light grey */
+    border-top: 16px solid blue; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*
+.loader {
   font-size: 10px;
   margin: 50px auto;
   text-indent: -9999em;
   width: 11em;
   height: 11em;
   border-radius: 50%;
-  background: #000000;
-  background: -moz-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #000000 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #000000 10%, rgba(255, 255, 255, 0) 42%);
+  background: blue;
+  background: -moz-linear-gradient(left, blue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, blue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, blue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, blue 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, blue 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -250,7 +266,7 @@ optgroup {
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #000000;
+  background: blue;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -290,3 +306,4 @@ optgroup {
     transform: rotate(360deg);
   }
 }
+*/
