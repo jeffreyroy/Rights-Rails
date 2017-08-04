@@ -67,6 +67,16 @@ class CourtListener
     full_result["results"]
   end
 
+  def citing_all(cite_list)
+    citing_case_table = []
+    # Generate list of citing cases for each cite in list
+    cite_list.each do |cite|
+      citing_case_table << citing_opinions(cite)
+    end
+    # Return cases that appear in all citation lists
+    citing_case_table.reduce(:&)  
+  end
+
   def case_by_opinion(opinion_url)
     opinion_hash = get(opinion_url)
     cluster_url = opinion_hash["cluster"]
