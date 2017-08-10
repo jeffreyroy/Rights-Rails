@@ -1,7 +1,11 @@
 class CasesController < ApplicationController
 
+  include SessionsHelper
+
   # Skip CSRF protection
-  skip_before_filter  :verify_authenticity_token
+  skip_before_action  :verify_authenticity_token
+  before_action :logged_in_user, only: [:new, :create, :edit, :update]
+
 
   def index
   end

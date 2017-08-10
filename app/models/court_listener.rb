@@ -11,7 +11,6 @@ class CourtListener
     p request_url
     p self.class::TOKEN
     HTTParty.get(request_url, headers: {"Authorization" => "Token #{self.class::TOKEN}"})
-    # HTTParty.get(request_url)
   end
 
   # Perform query on endpoint
@@ -66,6 +65,16 @@ class CourtListener
     opinion_id = id_from_url(cur_opinion)
     full_result = query("opinions-cited", "fields=citing_opinion&cited_opinion__id=#{opinion_id}")
     full_result["results"]
+  end
+
+  def citing_all(cite_list)
+    citing_case_table = []
+    # Generate list of citing cases for each cite in list
+    cite_list.each do |cite|
+      citing_case_table << citing_opinions(cite)
+    end
+    # Return cases that appear in all citation lists
+    citing_case_table.reduce(:&)  
   end
 
   def case_by_opinion(opinion_url)

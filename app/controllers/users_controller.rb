@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  include SessionsHelper
+
+
+  # Require login to edit user info
+  before_action :logged_in_user, only: [:show, :edit, :update]
+
 
   def index
   end
@@ -12,7 +18,9 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:id] = @user.id
-        redirect_to issues_url
+        # redirect_to sessions_url(action: new)
+        redirect_to '/'
+
       else
         @errors = @user.errors.full_messages
         render 'new'
@@ -24,9 +32,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -39,5 +49,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :user_name)
   end
+
+
+
 
 end
